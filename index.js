@@ -10,6 +10,10 @@ const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/todo-db';
 // JSON 파싱 미들웨어
 app.use(express.json());
 
+// 라우터 연결
+const todoRouter = require('./routes/todoRouter');
+app.use('/todos', todoRouter);
+
 // 기본 라우트
 app.get('/', (req, res) => {
   res.json({ message: 'Todo Backend API가 정상적으로 실행중입니다!' });
