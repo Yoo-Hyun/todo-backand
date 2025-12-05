@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const app = express();
 const PORT = 5000;
@@ -7,7 +8,8 @@ const PORT = 5000;
 // MongoDB 연결 URI (로컬 MongoDB)
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/todo-db';
 
-// JSON 파싱 미들웨어
+// 미들웨어
+app.use(cors());
 app.use(express.json());
 
 // 라우터 연결
