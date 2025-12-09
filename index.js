@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 // MongoDB 연결 URI (로컬 MongoDB)
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/todo-db';
